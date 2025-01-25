@@ -133,7 +133,7 @@ Farmers often face challenges in selecting the right crop and fertilizer, leadin
 - **Accuracy**: 100%
 - **Confusion Matrix**:
 
-  ![Confusion Matrix] [path_to_confusion_matrix_image][https://github.com/MannyG3/Crop-and-fertilizer-recommendation/blob/main/output.png]
+  ![Confusion Matrix](https://github.com/MannyG3/Crop-and-fertilizer-recommendation/blob/main/output.png)
 
 *Include visualizations and detailed metrics once both models are fully developed and evaluated.*
 
