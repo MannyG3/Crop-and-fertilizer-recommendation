@@ -1,7 +1,5 @@
 # Crop and Fertilizer Recommendation System 🌾🌱
 
-![Project Banner](path_to_your_banner_image) <!-- Optional: Add a banner image -->
-
 ## Table of Contents
 
 - [📖 Introduction](#-introduction)
