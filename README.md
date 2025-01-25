@@ -149,7 +149,7 @@ Farmers often face challenges in selecting the right crop and fertilizer, leadin
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/crop-fertilizer-recommendation.git
+git clone https://github.com/MannyG3/crop-fertilizer-recommendation.git
 cd crop-fertilizer-recommendation
 ```
 
