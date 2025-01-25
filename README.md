@@ -323,5 +323,4 @@ This project is licensed under the [MIT License](LICENSE).
 - [NumPy](https://numpy.org/)
 - [Matplotlib](https://matplotlib.org/)
 - [Seaborn](https://seaborn.pydata.org/)
-- [Streamlit](https://streamlit.io/) *(if used)*
-- [Other Resources](links to tutorials, articles, etc.)
+- [Streamlit](https://streamlit.io/)
