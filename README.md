@@ -303,7 +303,7 @@ Contributions are welcome! Whether it's reporting bugs, suggesting features, or 
 
 This project is licensed under the [MIT License](LICENSE).
 
-*Replace with your chosen license. Ensure you include a `LICENSE` file in your repository.*
+*Replace with your chosen license. Ensure you include a `LICENSE` file in your repository*
 
 ---
 
