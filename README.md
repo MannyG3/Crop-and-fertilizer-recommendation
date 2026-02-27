@@ -1,326 +1,171 @@
-# Crop and Fertilizer Recommendation System 🌾🌱
+# Crop & Fertilizer Recommendation System 🌾
 
-## Table of Contents
+A full-stack smart agriculture platform that combines machine learning and modern web technologies to help farmers make data-driven decisions for crop selection and soil nutrient planning.
 
-- [📖 Introduction](#-introduction)
-- [🚀 Features](#-features)
-- [🛠️ Technologies Used](#️-technologies-used)
-- [📊 Data](#-data)
-- [🤖 Models](#-models)
-- [📈 Results](#-results)
-- [⚙️ Installation](#️-installation)
-- [💻 Usage](#-usage)
-- [📁 Project Structure](#-project-structure)
-- [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
-- [📧 Contact](#-contact)
+This project uses trained ML models for crop and fertilizer intelligence, exposes prediction services through FastAPI, and supports MERN-based application workflows for profile management, historical activity, and dashboard visualizations.
 
 ---
 
-## 📖 Introduction
+## Features
 
-Agriculture is a cornerstone of human civilization, and optimizing crop yield while ensuring sustainable farming practices is crucial for food security and environmental health. This project presents a **Crop and Fertilizer Recommendation System** leveraging machine learning to assist farmers in selecting the most suitable crops and corresponding fertilizers based on soil and environmental parameters.
-
-### 🔍 Problem Statement
-
-Farmers often face challenges in selecting the right crop and fertilizer, leading to suboptimal yields and resource wastage. This system aims to:
-
-- **Recommend the optimal crop** to cultivate based on soil nutrients, pH, moisture, and climatic conditions.
-- **Suggest appropriate fertilizers** to enhance soil fertility and crop yield, tailored to the recommended crop and current soil deficiencies.
-
-### 🎯 Objectives
-
-- Develop accurate machine learning models for crop and fertilizer recommendations.
-- Provide an intuitive interface for farmers to input their soil and environmental data.
-- Facilitate informed decision-making to improve agricultural productivity and sustainability.
+- ML-driven crop recommendation using soil and climate parameters (N, P, K, temperature, humidity, pH, rainfall)
+- Confidence-scored AI prediction responses for better decision visibility
+- Fertilizer recommendation model support for nutrient planning
+- FastAPI inference endpoint (`/predict`) with request validation via Pydantic
+- Farmer profile and soil history data modeling with MongoDB + Mongoose
+- Recent activity retrieval for chart-driven analytics (last 5 recommendations)
+- Frontend-ready UI components (Tailwind + Chart.js radar visualization for N-P-K comparison)
 
 ---
 
-## 🚀 Features
+## Tech Stack
 
-- **Crop Recommendation**: Suggests the best-suited crop for cultivation based on input parameters.
-- **Fertilizer Recommendation**: Recommends appropriate fertilizers to address soil deficiencies and support the selected crop.
-- **User-Friendly Interface**: Interactive interface for easy data input and result interpretation.
-- **Model Deployment**: Ready for deployment as a web application or API for seamless integration.
+### Frontend (MERN Layer)
 
----
+- React.js
+- Tailwind CSS
+- Chart.js (`react-chartjs-2`)
 
-## 🛠️ Technologies Used
+### Backend (MERN Layer)
 
-- **Programming Language**: Python
-- **Libraries & Frameworks**:
-  - Data Manipulation: `pandas`, `numpy`
-  - Visualization: `matplotlib`, `seaborn`
-  - Machine Learning: `scikit-learn`
-  - Model Serialization: `joblib`
-  - Web Interface (Optional): `Streamlit` / `Flask` / `Django`
-- **Development Environment**: VS Code with Jupyter Notebook extension
-- **Version Control**: Git & GitHub
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
 
----
+### AI/ML Inference Layer
 
-## 📊 Data
-
-### 🔗 Datasets
-
-1. **Crop Recommendation Dataset** (`crop_recommendation.csv`)
-   - **Features**:
-     - `temparature`: Temperature in °C
-     - `humidity`: Humidity in %
-     - `moisture`: Soil moisture level
-     - `soil type`: Type of soil (e.g., Sandy, Loamy, Clayey)
-     - `nitrogen`: Nitrogen level in soil
-     - `potassium`: Potassium level in soil
-     - `phosphorous`: Phosphorous level in soil
-   - **Target**:
-     - `label`: Crop type to be recommended
-
-2. **Fertilizer Prediction Dataset** (`fertilizer_prediction.csv`)
-   - **Features**:
-     - `temparature`: Temperature in °C
-     - `humidity`: Humidity in %
-     - `moisture`: Soil moisture level
-     - `soil type`: Type of soil
-     - `crop type`: Type of crop
-     - `nitrogen`: Nitrogen level in soil
-     - `potassium`: Potassium level in soil
-     - `phosphorous`: Phosphorous level in soil
-   - **Target**:
-     - `fertilizer name`: Recommended fertilizer
-
-### 📑 Data Source
-
-*Provide details about where the datasets originated. If they are publicly available, include links. If they are proprietary or generated, briefly describe their creation.*
+- Python
+- FastAPI
+- Scikit-learn
+- Joblib
+- NumPy
+- Pydantic
 
 ---
 
-## 🤖 Models
+## Project Structure
 
-### 1. **Fertilizer Recommendation Model**
-
-- **Algorithm**: Random Forest Classifier
-- **Performance**:
-  - **Accuracy**: 100%
-  - **Classification Report**:
-    ```
-                  precision    recall  f1-score   support
-
-        10-26-26       1.00      1.00      1.00         1
-        14-35-14       1.00      1.00      1.00         3
-        17-17-17       1.00      1.00      1.00         1
-           20-20       1.00      1.00      1.00         3
-           28-28       1.00      1.00      1.00         3
-             DAP       1.00      1.00      1.00         4
-            Urea       1.00      1.00      1.00         5
-
-        accuracy                           1.00        20
-       macro avg       1.00      1.00      1.00        20
-    weighted avg       1.00      1.00      1.00        20
-    ```
-- **Notes**:
-  - Achieved perfect accuracy on the test set. Consider evaluating with a larger dataset or using cross-validation to ensure generalizability.
-
-### 2. **Crop Recommendation Model**
-
-*To be developed. Follow a similar approach as the Fertilizer Recommendation Model.*
-
----
-
-## 📈 Results
-
-### Fertilizer Recommendation
-
-- **Accuracy**: 100%
-- **Confusion Matrix**:
-
-  ![Confusion Matrix](https://github.com/MannyG3/Crop-and-fertilizer-recommendation/blob/main/output.png)
-
-*Include visualizations and detailed metrics once both models are fully developed and evaluated.*
-
----
-
-## ⚙️ Installation
-
-### Prerequisites
-
-- **Python 3.6+**
-- **pip** package manager
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/MannyG3/crop-fertilizer-recommendation.git
-cd crop-fertilizer-recommendation
-```
-
-### Create a Virtual Environment (Optional but Recommended)
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-*Ensure your `requirements.txt` includes all necessary libraries. Example:*
-
-```
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
-joblib
-streamlit  # If using Streamlit for the interface
-```
-
----
-
-## 💻 Usage
-
-### 1. **Training the Models**
-
-*Run the Jupyter Notebook or Python scripts to train and save the models.*
-
-```bash
-jupyter notebook
-```
-
-*Open the notebook and execute the cells to train the Crop and Fertilizer Recommendation models.*
-
-### 2. **Making Predictions**
-
-*Use the provided scripts or integrate the models into a web application for real-time recommendations.*
-
-#### Example: Using the Recommendation Function
-
-```python
-from recommendation_system import recommend_crop_and_fertilizer
-
-# Example input values
-temparature = 25.0      # in degrees Celsius
-humidity = 80.0         # in percentage
-moisture = 200          # soil moisture level
-soil_type = 'Loamy'     # soil type as string
-nitrogen = 90           # N level
-phosphorous = 42        # P level
-potassium = 43          # K level
-
-# Get recommendations
-crop, fertilizer = recommend_crop_and_fertilizer(
-    temparature, 
-    humidity, 
-    moisture, 
-    soil_type, 
-    nitrogen, 
-    phosphorous, 
-    potassium
-)
-
-print(f"Recommended Crop: {crop}")
-print(f"Recommended Fertilizer: {fertilizer}")
-```
-
-### 3. **Deploying the Web Application (Optional)**
-
-*If you have built a web interface using Streamlit, Flask, or Django, follow the respective framework's instructions to run the application.*
-
-#### Example: Running a Streamlit App
-
-```bash
-streamlit run app.py
-```
-
-*This will launch the web interface in your default browser, allowing users to input parameters and receive recommendations.*
-
----
-
-## 📁 Project Structure
-
-```
-crop-fertilizer-recommendation/
-├── Dataset/
-│   ├── crop_recommendation.csv
-│   └── fertilizer_prediction.csv
-├── models/
-│   ├── crop_model.pkl
-│   ├── fertilizer_model.pkl
-│   └── scalers/
-│       ├── crop_scaler.pkl
-│       └── fertilizer_scaler.pkl
-├── notebooks/
-│   ├── Crop_Recommendation.ipynb
-│   └── Fertilizer_Recommendation.ipynb
+```text
+Crop-and-fertilizer-recommendation/
+├── app/
+│   └── main.py                      # FastAPI crop prediction service
+├── backend/
+│   ├── models/
+│   │   └── farmerSchemas.js         # FarmerProfile + SoilHistory schemas
+│   ├── server.js                    # Express server and recent-activity route
+│   ├── package.json
+│   └── .env.example
 ├── src/
-│   ├── data_preprocessing.py
-│   ├── train_crop_model.py
-│   ├── train_fertilizer_model.py
-│   └── recommendation_system.py
-├── app.py  # If using Streamlit or another web framework
-├── requirements.txt
-├── README.md
-└── LICENSE
+│   └── components/
+│       ├── SoilInputForm.jsx
+│       └── NPKRadarChart.jsx
+├── model/
+│   ├── crop_model.pkl
+│   ├── crop_scaler.pkl
+│   ├── fertilizer_model.pkl
+│   └── fertilizer_model_optimized.pkl
+├── data/
+│   ├── Crop_recommendation.csv
+│   └── Fertilizer Prediction.csv
+└── requirements.txt
 ```
 
 ---
 
-## 🤝 Contributing
+## Setup Instructions
 
-Contributions are welcome! Whether it's reporting bugs, suggesting features, or submitting pull requests, your input is valuable.
+### 1) Clone Repository
 
-### Steps to Contribute
+```bash
+git clone https://github.com/MannyG3/Crop-and-fertilizer-recommendation.git
+cd Crop-and-fertilizer-recommendation
+```
 
-1. **Fork the Repository**
-2. **Create a Feature Branch**
+### 2) Setup Python/FastAPI Service
 
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-3. **Commit Your Changes**
+- API base URL: `http://127.0.0.1:8000`
+- Health check: `GET /health`
+- Prediction endpoint: `POST /predict`
 
-   ```bash
-   git commit -m "Add your message here"
-   ```
+Example request body:
 
-4. **Push to the Branch**
+```json
+{
+  "nitrogen": 90,
+  "phosphorus": 42,
+  "potassium": 43,
+  "temperature": 25.0,
+  "humidity": 80.0,
+  "ph": 6.5,
+  "rainfall": 202.9
+}
+```
 
-   ```bash
-   git push origin feature/YourFeature
-   ```
+### 3) Setup Node/Express Backend
 
-5. **Open a Pull Request**
+```bash
+cd backend
+cp .env.example .env
+npm install
+npm start
+```
 
-*Ensure your contributions adhere to the project's code of conduct and guidelines.*
+- Backend server default: `http://localhost:4000`
+- Recent activity endpoint: `GET /farmers/:farmerId/recent-activity`
+
+### 4) Frontend Integration Notes
+
+If you are building/continuing the React app, install chart dependencies:
+
+```bash
+npm install chart.js react-chartjs-2
+```
+
+Use the provided components from `src/components` for soil data input and radar chart visualization.
 
 ---
 
-## 📜 License
+## API Snapshot
 
-This project is licensed under the [MIT License](LICENSE).
+### FastAPI
 
-*Replace with your chosen license. Ensure you include a `LICENSE` file in your repository*
+- `GET /health` → service status
+- `POST /predict` → crop recommendation + confidence
+
+Error behavior:
+- Returns `503` with `Model Not Found` when model file is missing
+- Returns `500` on model load or prediction failure
+
+### Express
+
+- `GET /farmers/:farmerId/recent-activity` → last 5 AI recommendations for dashboard charting
 
 ---
 
-## 📧 Contact
+## Future Scope
 
-- **Your Name** - [@yourusername](https://github.com/MannyG3)
-- **Email**: mayurgund3333@gmail.com
-
-*Feel free to reach out for questions, suggestions, or collaborations!*
+- Integrate real-time weather APIs (temperature, humidity, rainfall forecasts) to improve prediction context
+- Connect IoT soil sensor streams for live N-P-K, moisture, and pH ingestion
+- Add seasonality-aware recommendation logic and region-specific crop constraints
+- Enable multilingual advisory reports and offline-first farmer workflows
+- Introduce model monitoring and automated retraining pipelines
 
 ---
 
-## Acknowledgements
+## Contributing
 
-- [Scikit-Learn](https://scikit-learn.org/)
-- [Pandas](https://pandas.pydata.org/)
-- [NumPy](https://numpy.org/)
-- [Matplotlib](https://matplotlib.org/)
-- [Seaborn](https://seaborn.pydata.org/)
-- [Streamlit](https://streamlit.io/)
+Contributions are welcome. Please open an issue for feature requests or bug reports, and submit PRs with clear descriptions and test steps.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
